@@ -532,7 +532,7 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
                         if(response.body().getData().getRating()!= 0) {
 
-                            txt_serv_rating.setText(""+response.body().getData().getRating());
+                            txt_serv_rating.setText(""+response.body().getData().getRating()+" *");
 
                         }
 

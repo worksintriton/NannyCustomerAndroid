@@ -153,6 +153,14 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
     TextView txt_address;
 
     @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_start_otp)
+    TextView txt_start_otp;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.txt_end_otp)
+    TextView txt_end_otp;
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.scrollablContent)
     ScrollView scrollablContent;
 
@@ -361,6 +369,25 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
                             appointmentid = response.body().getData().getAppointment_UID();
                             appointmentid = response.body().getData().getAppointment_UID();
                             userid = response.body().getData().getUser_id().get_id();
+
+                            if(response.body().getData().getWork_status() != null && response.body().getData().getWork_status().equalsIgnoreCase("Started")){
+                                btn_cancel.setVisibility(View.INVISIBLE);
+                            }else{
+                                btn_cancel.setVisibility(View.VISIBLE);
+                            }
+                            if(response.body().getData().getStart_otp() != null && !response.body().getData().getStart_otp().isEmpty()){
+                               txt_start_otp.setText(response.body().getData().getStart_otp());
+                           }else{
+                               txt_start_otp.setText("");
+
+                           }
+                            if(response.body().getData().getEnd_otp() != null && !response.body().getData().getEnd_otp().isEmpty()){
+                                txt_end_otp.setText(response.body().getData().getEnd_otp());
+                            }else{
+                                txt_end_otp.setText("");
+
+                            }
+                            response.body().getData().getEnd_otp();
 
                             String img_user = response.body().getData().getSp_id().getProfile_img();
 

@@ -234,7 +234,7 @@ public class PetLoverLoaderActivity extends AppCompatActivity {
         MaterialProgressBar progressBar = (MaterialProgressBar) findViewById(R.id.progress);
 
         // timer for seekbar
-        final int oneMin = 1 * 60 * 1000; // 1 minute in milli seconds
+        final int oneMin = 2 * 60 * 1000; // 1 minute in milli seconds
 
         /*final int oneMin = 10000; // 1 minute in milli seconds
 */
