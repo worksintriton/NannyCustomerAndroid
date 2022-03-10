@@ -388,7 +388,7 @@ public class PetLoverServiceDetailScreenActivity extends AppCompatActivity imple
             }if(count_number != null){
                 txt_noofhours.setText(count_number);
             }if(total_amount != null){
-                txt_totalcost.setText("\u20B9 "+total_amount);
+                txt_totalcost.setText("RM  "+total_amount);
             }
             if(count_number != null){
                 txt_noofhours.setText(count_number);
@@ -741,7 +741,7 @@ public class PetLoverServiceDetailScreenActivity extends AppCompatActivity imple
                         if(response.body().getDetails().getAmount() != 0) {
                             serviceamount = response.body().getDetails().getAmount();
 
-                            txt_dr_consultationfees.setText("INR "+serviceamount);
+                            txt_dr_consultationfees.setText("RM " +serviceamount);
 
 
                         }

@@ -526,7 +526,7 @@ public class Service_Details_Activity extends AppCompatActivity implements View.
 
                             serviceamount = response.body().getData().getPrice();
 
-                            txt_serv_price.setText("\u20B9"+response.body().getData().getPrice());
+                            txt_serv_price.setText("RM "+response.body().getData().getPrice());
 
                         }
 

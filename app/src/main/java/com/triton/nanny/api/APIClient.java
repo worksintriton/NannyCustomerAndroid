@@ -14,13 +14,9 @@ public class APIClient {
     private static OkHttpClient client;
 
 
-    /*live*/
-  /*public static String BASE_URL = "http://52.25.163.13:3000/api/";
-  public static String IMAGE_BASE_URL = "http://52.25.163.13:3000/";*/
-
-     /*dev*/
-    public static String BASE_URL = "http://54.193.18.54:3000/api/";
-    public static String IMAGE_BASE_URL = "http://54.193.18.54:3000/";
+    /*dev*/
+    public static String BASE_URL = "http://13.52.231.211:3000/api/";
+    public static String IMAGE_BASE_URL = "http://13.52.231.211:3000/";
 
     /*Banner Image*/
     public static String BANNER_IMAGE_URL = BASE_URL+"uploads/bannerempty.jpg";

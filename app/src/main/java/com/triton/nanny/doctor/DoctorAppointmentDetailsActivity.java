@@ -716,8 +716,8 @@ public class DoctorAppointmentDetailsActivity extends AppCompatActivity implemen
         }
 
         if(order_cost != null && !order_cost.isEmpty()){
-            txt_order_cost.setText("\u20B9 "+order_cost);
-            txt_serv_cost.setText("\u20B9 "+order_cost);
+            txt_order_cost.setText("RM  "+order_cost);
+            txt_serv_cost.setText("RM  "+order_cost);
         }
 
         if(addr != null && !addr.isEmpty()){

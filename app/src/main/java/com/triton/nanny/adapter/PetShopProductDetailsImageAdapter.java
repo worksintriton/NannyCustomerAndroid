@@ -63,18 +63,18 @@ public class PetShopProductDetailsImageAdapter extends  RecyclerView.Adapter<Rec
         ShopDashboardResponse.DataBean.ProductDetailsBean.ProductListBean productListBean = productList.get(position);
         holder.txt_products_title.setText(productListBean.getProduct_title());
         if(productListBean.getProduct_price() != 0){
-            holder.txt_products_price.setText("\u20B9 "+productListBean.getProduct_price());
+            holder.txt_products_price.setText("RM  "+productListBean.getProduct_price());
         }
         else{
-            holder.txt_products_price.setText("\u20B9 "+0);
+            holder.txt_products_price.setText("RM  "+0);
         }
 
         if(productListBean.getProduct_discount_price() != 0){
             holder.txt_product_discount_price.setVisibility(View.VISIBLE);
-            holder.txt_product_discount_price.setText("\u20B9 "+productListBean.getProduct_discount_price());
+            holder.txt_product_discount_price.setText("RM  "+productListBean.getProduct_discount_price());
             holder.txt_product_discount_price.setPaintFlags(holder.txt_product_discount_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }else{
-            holder.txt_product_discount_price.setText("\u20B9 "+0);
+            holder.txt_product_discount_price.setText("RM  "+0);
             holder.txt_product_discount_price.setVisibility(View.GONE);
         }
 

@@ -62,7 +62,7 @@ public class ProductsSearchAdapter extends  RecyclerView.Adapter<RecyclerView.Vi
             holder.txt_products_title.setText(productSearchResponseCall.get(position).getProduct_title());
         }
         if(productSearchResponseCall.get(position).getProduct_price() != 0){
-            holder.txt_products_price.setText("\u20B9 "+productSearchResponseCall.get(position).getProduct_price());
+            holder.txt_products_price.setText("RM  "+productSearchResponseCall.get(position).getProduct_price());
         }
 
 

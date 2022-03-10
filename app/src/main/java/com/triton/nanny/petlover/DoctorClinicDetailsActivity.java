@@ -660,7 +660,7 @@ public class DoctorClinicDetailsActivity extends AppCompatActivity implements Vi
 
 
                             if(response.body().getData().getAmount() != 0){
-                                txt_dr_consultationfees.setText("INR "+response.body().getData().getAmount());
+                                txt_dr_consultationfees.setText("RM " +response.body().getData().getAmount());
                             }
 
 

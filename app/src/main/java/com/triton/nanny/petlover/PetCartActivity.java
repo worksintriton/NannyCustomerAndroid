@@ -421,26 +421,26 @@ public class PetCartActivity extends AppCompatActivity implements AddandRemovePr
                                 txt_lbl_subtotal.setText("Subtotal ( "+response.body().getProdcut_item_count()+" items)" );
                             }
                             if(response.body().getProdouct_total() != 0){
-                                txt_sub_total.setText(" \u20B9 "+response.body().getProdouct_total());
+                                txt_sub_total.setText(" RM  "+response.body().getProdouct_total());
                             }else{
-                                txt_sub_total.setText("\u20B9 "+0);
+                                txt_sub_total.setText("RM  "+0);
 
                             }
                             if(response.body().getDiscount_price() != 0){
-                                txt_discount_amount.setText(" \u20B9 "+response.body().getDiscount_price());
+                                txt_discount_amount.setText(" RM  "+response.body().getDiscount_price());
                             }else{
-                                txt_discount_amount.setText(" \u20B9 "+0);
+                                txt_discount_amount.setText(" RM  "+0);
                             }
                             if(response.body().getShipping_charge() != 0){
-                                txt_shipping_amount.setText(" \u20B9 "+response.body().getShipping_charge());
+                                txt_shipping_amount.setText(" RM  "+response.body().getShipping_charge());
                             }else{
-                                txt_shipping_amount.setText(" \u20B9 "+0);
+                                txt_shipping_amount.setText(" RM  "+0);
 
                             }
                             if(response.body().getGrand_total() != 0){
-                                txt_total_amount.setText(" \u20B9 "+response.body().getGrand_total());
+                                txt_total_amount.setText(" RM  "+response.body().getGrand_total());
                             }else{
-                                txt_total_amount.setText(" \u20B9 "+0);
+                                txt_total_amount.setText(" RM  "+0);
 
                             }
 

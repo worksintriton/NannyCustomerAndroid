@@ -491,7 +491,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
         if(service_amount != null && !service_amount.isEmpty()){
 
-            txt_serv_cost.setText("\u20B9 "+service_amount);
+            txt_serv_cost.setText("RM  "+service_amount);
         }else{
             txt_serv_cost.setText("");
         }
@@ -557,7 +557,7 @@ public class PetAppointmentDetailsActivity extends AppCompatActivity implements 
 
         if(order_cost != null && !order_cost.isEmpty()){
 
-            txt_order_cost.setText("\u20B9 "+order_cost);
+            txt_order_cost.setText("RM  "+order_cost);
 
         }
         else{

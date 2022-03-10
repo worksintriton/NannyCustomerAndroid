@@ -101,7 +101,7 @@ public class PetLoverShopNewFavAdapter extends  RecyclerView.Adapter<RecyclerVie
               holder.txt_category_title.setText(currentItem.getCat_name());
          }*/
           if(currentItem.getProduct_price() != 0){
-              holder.txt_products_price.setText("INR "+currentItem.getProduct_price());
+              holder.txt_products_price.setText("RM " +currentItem.getProduct_price());
           }else{
               holder.txt_products_price.setText("INR 0");
           }

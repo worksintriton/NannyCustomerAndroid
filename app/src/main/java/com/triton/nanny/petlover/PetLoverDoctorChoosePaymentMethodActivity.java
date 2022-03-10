@@ -274,7 +274,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                 ll_cost.setVisibility(View.GONE);
                 ll_discount.setVisibility(View.GONE);
                 edt_coupon.setText("");
-                txt_total_amount.setText("\u20B9 "+Amount);
+                txt_total_amount.setText("RM  "+Amount);
                 Total_price = Amount;
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
@@ -289,7 +289,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                 ll_cost.setVisibility(View.GONE);
                 ll_discount.setVisibility(View.GONE);
                 edt_coupon.setText("");
-                txt_total_amount.setText("\u20B9 "+Amount);
+                txt_total_amount.setText("RM  "+Amount);
                 Total_price = Amount;
                 Coupon_status = "Not Applied";
                 Coupon_code = "";
@@ -342,8 +342,8 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
             txt_pet_name.setText(petname);
         }
         if(Amount != 0){
-            txt_cost.setText("\u20B9 "+Amount);
-            txt_total_amount.setText("\u20B9 "+Amount);
+            txt_cost.setText("RM  "+Amount);
+            txt_total_amount.setText("RM  "+Amount);
             Total_price = Amount;
         }
         if(txt_booked_date != null){
@@ -363,7 +363,7 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
                     viewapply.setVisibility(View.GONE);
                     ll_cost.setVisibility(View.GONE);
                     ll_discount.setVisibility(View.GONE);
-                    txt_total_amount.setText("\u20B9 "+Amount);
+                    txt_total_amount.setText("RM  "+Amount);
                     Coupon_status = "Not Applied";
                     Coupon_code = "";
                     Original_price = 0;
@@ -469,25 +469,25 @@ public class PetLoverDoctorChoosePaymentMethodActivity extends AppCompatActivity
 
                         if(response.body().getData().getDiscount_price() != 0){
                             Discount_price = response.body().getData().getDiscount_price();
-                            txt_discount_amount.setText("\u20B9 "+response.body().getData().getDiscount_price());
+                            txt_discount_amount.setText("RM  "+response.body().getData().getDiscount_price());
                         }else{
-                            txt_discount_amount.setText("\u20B9 "+0);
+                            txt_discount_amount.setText("RM  "+0);
                         }
                         if(response.body().getData().getOriginal_price() != 0){
                             Original_price = response.body().getData().getOriginal_price();
-                            txt_serv_cost.setText("\u20B9 "+response.body().getData().getOriginal_price());
+                            txt_serv_cost.setText("RM  "+response.body().getData().getOriginal_price());
 
                         }else{
-                            txt_serv_cost.setText("\u20B9 "+0);
+                            txt_serv_cost.setText("RM  "+0);
 
                         }
 
                         if(response.body().getData().getTotal_price() != 0){
                             Total_price = response.body().getData().getTotal_price();
-                            txt_total_amount.setText("\u20B9 "+response.body().getData().getTotal_price());
+                            txt_total_amount.setText("RM  "+response.body().getData().getTotal_price());
 
                         }else{
-                            txt_total_amount.setText("\u20B9 "+0);
+                            txt_total_amount.setText("RM  "+0);
                         }
 
 

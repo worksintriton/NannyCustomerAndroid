@@ -214,7 +214,7 @@ public class ShippingAddressSPActivity extends AppCompatActivity implements View
 
             if (grand_total!=0){
 
-                txt_grand_total.setText("\u20B9 "+ grand_total);
+                txt_grand_total.setText("RM  "+ grand_total);
             }
 
             prodcut_count = extras.getInt("prodcut_count");

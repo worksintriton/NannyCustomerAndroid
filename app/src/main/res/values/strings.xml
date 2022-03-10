@@ -606,7 +606,7 @@
     <string name="classic_cleaning">Classic Cleaning</string>
     <string name="upto_25_off">Upto 25 % off</string>
     <string name="price_serv">Price</string>
-    <string name="dollar_300_00">\u20B9 300</string>
+    <string name="dollar_300_00">RM  300</string>
     <string name="rating">Rating</string>
     <string name="_4_66">4.66</string>
     <string name="_3_5k_ratings">3.5k ratings</string>
@@ -626,4 +626,5 @@
     <string name="deduted">Date</string>
     <string name="hours">Hours</string>
     <string name="transaction_history">Transaction History</string>
+    <string name="view_appointments">View Appointments</string>
 </resources>

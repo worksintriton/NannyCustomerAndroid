@@ -85,7 +85,7 @@ public class PetMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerV
         }
 
         if(missedAppointmentResponseList.get(position).getBooking_time() != null){
-            holder.txt_datetimeslot.setText("\u20B9 "+missedAppointmentResponseList.get(position).getBooking_time());
+            holder.txt_datetimeslot.setText(missedAppointmentResponseList.get(position).getBooking_time());
         }
         else {
 
@@ -94,7 +94,7 @@ public class PetMissedAppointmentAdapter extends  RecyclerView.Adapter<RecyclerV
 
 
         if(missedAppointmentResponseList.get(position).getBooking_cost() != null){
-            holder.txt_service_cost.setText("\u20B9 "+missedAppointmentResponseList.get(position).getBooking_cost());
+            holder.txt_service_cost.setText("RM  "+missedAppointmentResponseList.get(position).getBooking_cost());
         }
 
         else {

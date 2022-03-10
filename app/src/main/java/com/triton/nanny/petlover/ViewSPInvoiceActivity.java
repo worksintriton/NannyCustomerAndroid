@@ -428,7 +428,7 @@ public class ViewSPInvoiceActivity extends AppCompatActivity {
 
         if(service_amount != null && !service_amount.isEmpty()){
 
-            txt_cost.setText("\u20B9 "+service_amount);
+            txt_cost.setText("RM  "+service_amount);
 
         }
         else{
@@ -437,7 +437,7 @@ public class ViewSPInvoiceActivity extends AppCompatActivity {
 
         if(total_amount != null && !total_amount.isEmpty()){
 
-            txt_total.setText("\u20B9 "+service_amount);
+            txt_total.setText("RM  "+service_amount);
 
         }
         else{

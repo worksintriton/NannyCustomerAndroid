@@ -57,7 +57,7 @@ public class TransactionHistoryAdapter extends  RecyclerView.Adapter<RecyclerVie
         if(currentItem.getStatus() != null && currentItem.getStatus().equalsIgnoreCase("credit")){
             if(currentItem.getTransaction_amount() != 0){
                 holder.txt_amount.setTextColor(context.getResources().getColor(R.color.medium_green));
-                holder.txt_amount.setText("+ "+"\u20B9 "+currentItem.getTransaction_amount());
+                holder.txt_amount.setText("+ "+"RM  "+currentItem.getTransaction_amount());
             }else{
                 holder.txt_amount.setText("");
             }
@@ -65,7 +65,7 @@ public class TransactionHistoryAdapter extends  RecyclerView.Adapter<RecyclerVie
         }else{
             if(currentItem.getTransaction_amount() != 0){
                 holder.txt_amount.setTextColor(context.getResources().getColor(R.color.vermillion));
-                holder.txt_amount.setText("- "+"\u20B9 "+currentItem.getTransaction_amount());
+                holder.txt_amount.setText("- "+"RM  "+currentItem.getTransaction_amount());
             }else{
                 holder.txt_amount.setText("");
             }

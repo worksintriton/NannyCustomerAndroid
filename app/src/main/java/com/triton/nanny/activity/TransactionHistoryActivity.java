@@ -225,12 +225,12 @@ public class TransactionHistoryActivity extends AppCompatActivity {
 
                         if(response.body().getData() != null) {
                             if(response.body().getData().getRefund_amount() != 0){
-                                txt_return.setText("\u20B9 "+response.body().getData().getRefund_amount());
+                                txt_return.setText("RM  "+response.body().getData().getRefund_amount());
                             }else{
                                 txt_return.setText("");
                             }
                             if(response.body().getData().getSpend_amount() != 0){
-                                txt_total_spent.setText("\u20B9 "+response.body().getData().getSpend_amount());
+                                txt_total_spent.setText("RM  "+response.body().getData().getSpend_amount());
                             }else{
                                 txt_total_spent.setText("");
                             }
