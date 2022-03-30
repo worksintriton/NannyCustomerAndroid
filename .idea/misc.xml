@@ -28,6 +28,7 @@
         <entry key="..\:/TritonAppsGIt/nanny_customer_santhosh/app/src/main/res/layout/toolbar_layout_petlover_footer_new_shaped.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/nanny_customer_santhosh/app/src/main/res/layout/toolbar_layout_petlover_header.xml" value="0.25416666666666665" />
         <entry key="..\:/TritonAppsGIt/nanny_customer_santhosh/app/src/main/res/menu/navigation_menu_drawer.xml" value="0.25416666666666665" />
+        <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/activity_pet_lover_dashboard.xml" value="0.13179347826086957" />
         <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/activity_pet_lover_loader.xml" value="0.20416666666666666" />
         <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/activity_pet_lover_service_detail_screen.xml" value="0.20416666666666666" />
         <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/activity_petappointment_details.xml" value="0.15534420289855072" />
@@ -35,8 +36,11 @@
         <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/activity_service_details.xml" value="0.20416666666666666" />
         <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/adapter_shop_card.xml" value="0.20416666666666666" />
         <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/fragment_pet_new_appointment.xml" value="0.13632246376811594" />
+        <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/navigation_drawer_layout_new.xml" value="0.2" />
         <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/petloverdetailscreen_bottom_sheet.xml" value="0.13632246376811594" />
         <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/sp_details_bottom_sheet.xml" value="0.20416666666666666" />
+        <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/toolbar_layout.xml" value="0.2" />
+        <entry key="..\:/TritonAppsGit/NannyCustomerAndroid/app/src/main/res/layout/toolbar_layout_petlover_footer_new_shaped.xml" value="0.2" />
         <entry key="..\:/Workspace/Petfolio_Clone_Nanny/app/src/main/res/drawable/rectangular_corner_bg_lightgrey.xml" value="0.290625" />
         <entry key="..\:/Workspace/Petfolio_Clone_Nanny/app/src/main/res/layout/activity_doctor_clinic_details.xml" value="0.2" />
         <entry key="..\:/Workspace/Petfolio_Clone_Nanny/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />

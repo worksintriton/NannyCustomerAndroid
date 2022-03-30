@@ -159,6 +159,8 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
 
         img_sos.setVisibility(View.GONE);
         img_cart.setVisibility(View.GONE);
+        img_notification.setVisibility(View.GONE);
+        img_profile.setVisibility(View.GONE);
         img_notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -215,15 +217,15 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
 
         btn_setpickuppoint.setOnClickListener(v -> {
             if(CityName != null){
-                   Intent intent = new Intent(PickUpLocationActivity.this,AddMyAddressOldUserActivity.class);
-                    intent.putExtra("latlng",strlatlng);
-                    intent.putExtra("cityname",CityName);
-                    intent.putExtra("address",AddressLine);
-                    intent.putExtra("PostalCode",PostalCode);
-                    intent.putExtra("fromactivity",fromactivity);
-                    startActivity(intent);
+                Intent intent = new Intent(PickUpLocationActivity.this,AddMyAddressOldUserActivity.class);
+                intent.putExtra("latlng",strlatlng);
+                intent.putExtra("cityname",CityName);
+                intent.putExtra("address",AddressLine);
+                intent.putExtra("PostalCode",PostalCode);
+                intent.putExtra("fromactivity",fromactivity);
+                startActivity(intent);
             }else{
-                Toasty.warning(PickUpLocationActivity.this,"Please select citynmae",Toasty.LENGTH_SHORT).show();
+                Toasty.warning(PickUpLocationActivity.this,"Please Select City Name",Toasty.LENGTH_SHORT).show();
             }
 
 
@@ -460,23 +462,31 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
             if(lat != 0 && lon != 0){
                 latitude = lat;
                 longitude = lon;
-                Log.w(TAG,"BundleData for search places :"+"lat :"+lat+" "+"lon :"+lon);
+                Log.w(TAG,"onLocationChanged BundleData for search places :"+"lat :"+lat+" "+"lon :"+lon+" placesearchactivity : "+placesearchactivity);
 
                 latLng = new LatLng(lat, lon);
             }
-
-
-
             if(placesearchactivity != null && placesearchactivity.equalsIgnoreCase("placesearchactivity")){
+                Log.w(TAG,"onLocationChanged BundleData if");
                 if(latitude != 0 && longitude != 0){
+                    Log.w(TAG,"onLocationChanged BundleData if latitude : "+latitude+" longitude : "+longitude);
                     latLng = new LatLng(latitude,longitude);
-                   // Log.w(TAG,"onLocationChanged BundleData if-->"+"Call getAddressResultResponse");
+
+                    // Log.w(TAG,"onLocationChanged BundleData if-->"+"Call getAddressResultResponse");
                     //Log.w(TAG,"onLocationChanged BundleData for searched places :"+"lat :"+lat+" "+"lon :"+lon);
                     strlatlng = String.valueOf(latLng);
                     //Log.w(TAG,"onLocationChanged BundleData"+strlatlng);
                     getAddressResultResponse(latLng);
+                    mMap.clear();
+                    //  mMap.addMarker(new MarkerOptions().position(place.getLatLng()).title(place.getName().toString()));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12.0f));
+                    markerOptions = new MarkerOptions().position(Objects.requireNonNull(latLng)).title(CityName);
+                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin));
+                    mMap.addMarker(markerOptions);
                 }
-            }else {
+            }
+            else {
                 Log.w(TAG,"onLocationChanged BundleData else");
                 mMap.clear();
                 //  mMap.addMarker(new MarkerOptions().position(place.getLatLng()).title(place.getName().toString()));
@@ -533,6 +543,7 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
             }
         }
     }
+    @SuppressLint("MissingSuperCall")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NotNull String @NotNull [] permissions, @NotNull int @NotNull [] grantResults) {
         if (requestCode == MY_PERMISSIONS_REQUEST_LOCATION) {
@@ -655,15 +666,29 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
         if(fromactivity != null && fromactivity.equalsIgnoreCase("ManageAddressDoctorActivity")){
             startActivity(new Intent(PickUpLocationActivity.this, ManageAddressDoctorActivity.class));
             finish();
-        }else{
-            startActivity(new Intent(PickUpLocationActivity.this, ManageAddressActivity.class));
+        }else if(fromactivity != null && fromactivity.equalsIgnoreCase("CustomerNavigationDrawer")){
+            Intent intent = new Intent(PickUpLocationActivity.this, ManageAddressActivity.class);
+            intent.putExtra("fromactivity", "CustomerNavigationDrawer");
+            startActivity(intent);
+            finish();
+        }else if(fromactivity != null && fromactivity.equalsIgnoreCase("CustomerProfileScreenActivity")){
+            Intent intent = new Intent(PickUpLocationActivity.this, ManageAddressActivity.class);
+            intent.putExtra("fromactivity", fromactivity);
+            startActivity(intent);
+            finish();
+        }
+        else{
+            Log.w(TAG,"onBackPressed : fromactivity : "+fromactivity);
+            Intent intent = new Intent(PickUpLocationActivity.this, ManageAddressActivity.class);
+            intent.putExtra("fromactivity", fromactivity);
+            startActivity(intent);
             finish();
         }
 
     }
 
     private void getAddressResultResponse(LatLng latLng) {
-       // Log.w(TAG,"GetAddressResultResponse-->"+latLng);
+        // Log.w(TAG,"GetAddressResultResponse-->"+latLng);
         //avi_indicator.setVisibility(View.VISIBLE);
         // avi_indicator.smoothToShow();
         Retrofit retrofit = new Retrofit.Builder()
@@ -673,12 +698,12 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
 
         API service = retrofit.create(API.class);
         String strlatlng = String.valueOf(latLng);
-      //  Log.w(TAG,"getAddressResultResponse strlatlng-->"+strlatlng);
+        //  Log.w(TAG,"getAddressResultResponse strlatlng-->"+strlatlng);
         String newString = strlatlng.replace("lat/lng:", "");
-       // Log.w(TAG,"getAddressResultResponse latlng=="+newString);
+        // Log.w(TAG,"getAddressResultResponse latlng=="+newString);
 
         String latlngs = newString.trim().replaceAll("\\(", "").replaceAll("\\)","").trim();
-       //Log.w(TAG,"getAddressResultResponse latlngs=="+latlngs);
+        //Log.w(TAG,"getAddressResultResponse latlngs=="+latlngs);
 
 
 
@@ -691,15 +716,17 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
 
 
                 Log.w(TAG,"GetAddressResultResponse" + new Gson().toJson(response.body()));
-                try {
-                    if (response.body() != null) {
+
+                try{
+
+                    if(response.body() != null) {
                         String currentplacename = null;
                         String compundcode = null;
 
-                        if (response.body().getPlus_code().getCompound_code() != null) {
+                        if(response.body().getPlus_code().getCompound_code() != null){
                             compundcode = response.body().getPlus_code().getCompound_code();
                         }
-                        if (compundcode != null) {
+                        if(compundcode != null) {
                             String[] separated = compundcode.split(",");
                             String placesname = separated[0];
                             String[] splitData = placesname.split("\\s", 2);
@@ -723,7 +750,7 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
 
                         }
                         List<GetAddressResultResponse.ResultsBean.AddressComponentsBean> addressComponentsBeanList = response.body().getResults().get(0).getAddress_components();
-                        if (addressComponentsBeanList != null) {
+                        if(addressComponentsBeanList != null) {
                             if (addressComponentsBeanList.size() > 0) {
                                 for (int i = 0; i < addressComponentsBeanList.size(); i++) {
                                     //Log.w(TAG, "addressComponentsBeanList size : " + addressComponentsBeanList.size());
@@ -784,9 +811,16 @@ public class PickUpLocationActivity extends FragmentActivity implements OnMapRea
                             }
                         }
                     }
-                }catch (Exception e){
 
                 }
+                catch (Exception e) {
+
+                    e.printStackTrace();
+
+                }
+
+
+
 
 
             }
